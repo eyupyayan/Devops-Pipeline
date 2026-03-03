@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: REPO_URL
+    repoURL: https://github.com/eyupyayan/Devops-Pipeline.git
     targetRevision: master
     path: deploy/charts/devops-lab
     helm:
@@ -20,4 +20,5 @@ spec:
       prune: true
       selfHeal: true
     syncOptions:
+
       - CreateNamespace=true

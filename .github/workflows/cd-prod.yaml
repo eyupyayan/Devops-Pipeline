@@ -1,0 +1,31 @@
+name: CD Prod (Manual GitOps)
+
+on:
+  workflow_dispatch:
+    inputs:
+      image_tag:
+        description: "Image tag to promote (e.g. abc1234)"
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  bump_prod:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Update Helm values-prod.yaml image tag
+        run: |
+          sed -i "s/^  tag: .*/  tag: \"${{ inputs.image_tag }}\"/" deploy/charts/devops-lab/values-prod.yaml
+          cat deploy/charts/devops-lab/values-prod.yaml | head -n 30
+
+      - name: Commit and push change
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git add deploy/charts/devops-lab/values-prod.yaml
+          git commit -m "chore(prod): promote image tag to ${{ inputs.image_tag }}"
+          git push

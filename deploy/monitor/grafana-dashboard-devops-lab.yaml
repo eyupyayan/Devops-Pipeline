@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: grafana-dashboard-devops-lab
+  namespace: monitor
+  labels:
+    grafana_dashboard: "1"
+data:
+  devops-lab-dashboard.json: |
+    {
+      "title": "DevOps Lab App",
+      "timezone": "browser",
+      "schemaVersion": 39,
+      "version": 1,
+      "refresh": "10s",
+      "panels": [
+        {
+          "type": "timeseries",
+          "title": "Requests per second (app_requests_total)",
+          "gridPos": { "x": 0, "y": 0, "w": 24, "h": 10 },
+          "targets": [
+            {
+              "refId": "A",
+              "expr": "sum(rate(app_requests_total[1m])) by (path)"
+            }
+          ]
+        }
+      ]
+    }

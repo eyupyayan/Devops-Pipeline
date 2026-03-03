@@ -1,0 +1,12 @@
+prometheus:
+  prometheusSpec:
+    # Tom label selector = match alt (lettest i lab)
+    serviceMonitorSelector: {}
+    serviceMonitorNamespaceSelector: {}
+
+grafana:
+  adminPassword: "admin"   # kun lab
+  sidecar:
+    dashboards:
+      enabled: true
+      searchNamespace: ALL

@@ -1,0 +1,24 @@
+# Git
+.git
+.gitignore
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pytest_cache/
+
+# Virtual environments
+.venv/
+venv/
+
+# Tests (vi trenger ikke tester i runtime image)
+tests/
+
+# Local config / OS
+.DS_Store
+.env
+
+# Kubernetes / Helm (ikke nødvendig i runtime image)
+deploy/

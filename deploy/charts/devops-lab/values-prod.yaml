@@ -1,0 +1,19 @@
+replicaCount: 2
+
+config:
+  APP_NAME: "devops-lab-prod"
+  LOG_LEVEL: "info"
+
+resources:
+  requests:
+    cpu: 100m
+    memory: 128Mi
+  limits:
+    cpu: 300m
+    memory: 256Mi
+
+autoscaling:
+  enabled: true
+  minReplicas: 2
+  maxReplicas: 5
+  targetCPUUtilizationPercentage: 60

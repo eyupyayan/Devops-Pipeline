@@ -1,0 +1,8 @@
+replicaCount: 1
+
+config:
+  APP_NAME: "devops-lab-dev"
+  LOG_LEVEL: "debug"
+
+autoscaling:
+  enabled: false

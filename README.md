@@ -353,18 +353,7 @@ ServiceMonitor selector matcher ikke Service labels.
 
 ---
 
-# 📌 Fremtidige Forbedringer (Neste nivå)
 
-* Semantic versioning
-* Helm chart version bumping
-* Separate infra-repo
-* Pull request previews
-* Canary deployments
-* Alerts i Alertmanager
-* SLO/SLA dashboards
-* Loki for logging
-
----
 
 # 🏁 Oppsummering
 
@@ -379,15 +368,4 @@ Dette prosjektet implementerer en realistisk DevOps-plattform lokalt:
 
 Alt kjører lokalt, uten cloud-spesifikke tjenester.
 
-Dette er et solid fundament for videre DevOps-utvikling.
 
----
-
-Hvis du vil kan jeg også lage:
-
-* 📄 En CV-vennlig prosjektbeskrivelse
-* 🧩 En arkitekturdiagram-illustrasjon
-* 🧪 En "interview explanation guide" så du kan forklare dette i jobbintervju
-* 📦 En versjon strukturert som et ekte open-source repo
-
-Si hva du vil bygge videre 🚀
